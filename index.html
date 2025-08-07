@@ -72,6 +72,30 @@ margin-bottom: 15px;
         text-decoration: underline
         cursor: pointer
     }
+    .buttons{
+        text-align: right;
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+
+    .buttons-visualizacao {
+        font-size: 20px;
+        color: rgb(8, 137, 36);
+        margin: 15px;
+        ;
+    }
+    .modo-grade {
+        padding-top: 20px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        width: 100%;
+    }
+    .modo-grade section {
+        width: 40%;
+    }
 </style>
 <body>
     <header>
@@ -82,8 +106,12 @@ margin-bottom: 15px;
             aluno do ensino tecnico
         </p>
     </header>
+    <div class="buttons">
+        <button class="buttons-visualizacao" onclick="mudarGrade()">Visualização Grade</button>
+        <button class="buttons-visualizacao" onclick="mudarLista()">Visualização Lista</button>
+    </div>
 
-    <main>
+    <main id="principal">
         <section>
             <h2>
                 minhas habilidades
@@ -91,7 +119,7 @@ margin-bottom: 15px;
                     <li>lgica de programação</li>
                     <li>HTML5 & CSS3</li>
                     <li>trabalho em equipe</li>
-                    <li>IOT</li>
+                    <li>jogar bem</li>
                 </ul>
             </h2>
         </section>
@@ -113,7 +141,7 @@ margin-bottom: 15px;
                     <li>Jogar</li>
                     <li>Futbol</li>
                     <li>Treinar</li>
-                    <li>Sssistir filmes</li>
+                    <li>sistir filmes</li>
                 </ul>
             </h2>
         </section>
@@ -139,4 +167,16 @@ margin-bottom: 15px;
         </footer>
     </main>
 </body>
+<script>
+    function mudarGrade() {
+      const principal = document.getElementById('principal')
+      principal.classList.add('modo-grade')
+    }
+</script> 
+<script>
+    function mudarLista(){
+      const principal = document.getElementById('principal')
+      principal.classList.remove('modo-grade')
+    }
+</script> 
 </html>
